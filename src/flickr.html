@@ -1,0 +1,36 @@
+<template>
+	<section>
+
+		  <div class="row">
+				<div class="col-lg-12">
+		<form role="form" class="form" submit.delegate="submit()">
+	      <!-- div class="form-group">
+	        <label for="ui">User Ids</label>
+			    <input type="text" value.bind="userIds" class="form-control" id="ui" placeholder="Comma separated User Ids" -->
+
+			    <div class="input-group">
+						<span for="it" class="input-group-addon">Tags</span>
+		        <input type="text" value.bind="imageTags" class="form-control" id="it" value="" placeholder="Separate multiple tags by commas">
+		        <span class="input-group-btn">
+			        <button type="submit" value.bind="tagMode" id="all" value="all" class="btn btn-default"> All! </button>
+			        <button type="submit" value.bind="tagMode" id="any" value="any" class="btn btn-default"> Any! </button>
+				      <button type="submit" value.bind="tagMode" id="clr" value="clr" class="btn btn-default">Clear!</button>
+			      </span>
+
+					</div><!-- /input-group -->
+    </form>
+				</div><!-- /.col- -->
+			</div><!-- /.row -->
+
+
+		<h2>${heading}</h2>		
+		<div class="row">
+			<div class="col-sm-12 col-md-6 col-lg-3 card-container" repeat.for="image of images">
+				<a class="thumbnail card pull-top" title.bind="image.title">
+					<!-- img style="height:200px;" src.bind="image.media.m" / -->
+					<div class="caption" innerHtml.bind="image.description"></div>
+				</a>
+			</div>
+		</div>
+	</section>
+</template>
